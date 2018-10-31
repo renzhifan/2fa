@@ -27,7 +27,6 @@ Route::get('/', function () {
 });
 use Illuminate\Http\Request;
 Route::any('/check',function (Request $request){
-    dd(date('Y-m-d H:i:s'));
     if(Google::CheckCode(session('secret'),$request->onecode)) {
         // 绑定场景：绑定成功，向数据库插入google参数，跳转到登录界面让用户登录
         // 登录认证场景：认证成功，执行认证操作
